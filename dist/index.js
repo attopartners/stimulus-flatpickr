@@ -315,7 +315,7 @@ let StimulusFlatpickr = /*#__PURE__*/function (_Controller) {
     key: "_initializeDateFormats",
     value: function _initializeDateFormats() {
       dateFormats.forEach(dateFormat => {
-        if (this.data.has(dateFormat)) {
+        if (this.data.has(dateFormat) && !this.data.has("formatDate")) {
           this.config[dateFormat] = convertDateFormat(this.data.get(dateFormat));
         }
       });

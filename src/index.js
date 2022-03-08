@@ -86,7 +86,7 @@ class StimulusFlatpickr extends Controller {
 
   _initializeDateFormats() {
     dateFormats.forEach((dateFormat) => {
-      if (this.data.has(dateFormat)) {
+      if (this.data.has(dateFormat) && !this.data.has("formatDate")) {
         this.config[dateFormat] = convertDateFormat(this.data.get(dateFormat))
       }
     })
